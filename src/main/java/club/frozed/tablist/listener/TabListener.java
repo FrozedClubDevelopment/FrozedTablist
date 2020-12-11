@@ -1,6 +1,6 @@
 package club.frozed.tablist.listener;
 
-import club.frozed.tablist.Tab;
+import club.frozed.tablist.FrozedTablist;
 import club.frozed.tablist.layout.TabLayout_v1_7;
 import club.frozed.tablist.layout.TabLayout_v1_8;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 @AllArgsConstructor
 public class TabListener implements Listener {
 
-    private Tab instance;
+    private FrozedTablist instance;
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
@@ -23,7 +23,7 @@ public class TabListener implements Listener {
         TabLayout_v1_8 tabLayout_v1_8;
         boolean validate = false;
 
-        switch (Tab.getInstance().getVersion()) {
+        switch (FrozedTablist.getInstance().getVersion()) {
             case v1_7_R4:
                 tabLayout_v1_7 = new TabLayout_v1_7(instance, player);
                 if (TabLayout_v1_7.getLayoutMapping().containsKey(player.getUniqueId())) {

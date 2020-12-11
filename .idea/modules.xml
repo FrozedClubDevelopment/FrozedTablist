@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TabAPI.iml" filepath="$PROJECT_DIR$/TabAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FrozedTablist.iml" filepath="$PROJECT_DIR$/FrozedTablist.iml" />
     </modules>
   </component>
 </project>

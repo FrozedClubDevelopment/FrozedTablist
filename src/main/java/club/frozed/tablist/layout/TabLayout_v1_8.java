@@ -1,6 +1,6 @@
 package club.frozed.tablist.layout;
 
-import club.frozed.tablist.Tab;
+import club.frozed.tablist.FrozedTablist;
 import club.frozed.tablist.entry.TabEntry;
 import club.frozed.tablist.skin.Skin;
 import club.frozed.tablist.util.Reflection;
@@ -47,12 +47,12 @@ public class TabLayout_v1_8 {
     private final WorldServer worldServer = minecraftServer.getWorldServer(0);
     private final PlayerInteractManager playerInteractManager = new PlayerInteractManager(worldServer);
 
-    private final Tab instance;
+    private final FrozedTablist instance;
 
     private final Player player;
     private final EntityPlayer entityPlayer;
 
-    public TabLayout_v1_8(Tab instance, Player player) {
+    public TabLayout_v1_8(FrozedTablist instance, Player player) {
         this.instance = instance;
         this.player = player;
 

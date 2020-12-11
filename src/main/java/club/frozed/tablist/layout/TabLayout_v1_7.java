@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
-import club.frozed.tablist.Tab;
+import club.frozed.tablist.FrozedTablist;
 import club.frozed.tablist.entry.TabEntry;
 import club.frozed.tablist.skin.Skin;
 import club.frozed.tablist.util.Reflection;
@@ -48,10 +48,10 @@ public class TabLayout_v1_7 {
     @Getter
     private static final Map<UUID, TabLayout_v1_7> layoutMapping = Maps.newHashMap();
 
-    private final Tab instance;
+    private final FrozedTablist instance;
     private final Player player;
 
-    public TabLayout_v1_7(Tab instance, Player player) {
+    public TabLayout_v1_7(FrozedTablist instance, Player player) {
         this.instance = instance;
         this.player = player;
     }

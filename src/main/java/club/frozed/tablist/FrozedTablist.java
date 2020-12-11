@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
-public class Tab {
+public class FrozedTablist {
 
     /*
     Forked from Hatsur API
@@ -23,13 +23,13 @@ public class Tab {
     -> https://github.com/norxir/eighttab
      */
 
-    @Getter private static Tab instance;
+    @Getter private static FrozedTablist instance;
 
     private final TabAdapter adapter;
 
     private Version version;
 
-    public Tab(JavaPlugin plugin, TabAdapter adapter, int delay1, int delay2) {
+    public FrozedTablist(JavaPlugin plugin, TabAdapter adapter, int delay1, int delay2) {
         instance = this;
         this.adapter = adapter;
 
