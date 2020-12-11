@@ -1,4 +1,4 @@
-package club.frozed.tab.util;
+package club.frozed.tablist.util;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

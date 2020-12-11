@@ -1,13 +1,13 @@
-package club.frozed.tab;
+package club.frozed.tablist;
 
-import club.frozed.tab.layout.TabLayout_v1_7;
-import club.frozed.tab.layout.TabLayout_v1_8;
-import club.frozed.tab.listener.TabListener;
-import club.frozed.tab.packet.TabPacket_v1_7;
-import club.frozed.tab.adapter.TabAdapter;
-import club.frozed.tab.packet.TabPacket_v1_8;
-import club.frozed.tab.runnable.TabRunnable_v1_7;
-import club.frozed.tab.runnable.TabRunnable_v1_8;
+import club.frozed.tablist.adapter.TabAdapter;
+import club.frozed.tablist.layout.TabLayout_v1_7;
+import club.frozed.tablist.layout.TabLayout_v1_8;
+import club.frozed.tablist.listener.TabListener;
+import club.frozed.tablist.packet.TabPacket_v1_7;
+import club.frozed.tablist.packet.TabPacket_v1_8;
+import club.frozed.tablist.runnable.TabRunnable_v1_7;
+import club.frozed.tablist.runnable.TabRunnable_v1_8;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -23,8 +23,7 @@ public class Tab {
     -> https://github.com/norxir/eighttab
      */
 
-    @Getter
-    private static Tab instance;
+    @Getter private static Tab instance;
 
     private final TabAdapter adapter;
 
@@ -37,7 +36,6 @@ public class Tab {
         String packageName = Bukkit.getServer().getClass().getPackage().getName();
         String version = packageName.substring(packageName.lastIndexOf('.') + 1);
         try {
-            final Class<?> clazz = Class.forName("club.frozed.tab.nms.version." + version);
             this.version = Version.valueOf(version);
             plugin.getLogger().info("[Tab] Using " + this.version.name() + " version.");
         } catch (final Exception e) {
@@ -59,7 +57,7 @@ public class Tab {
     }
 
     private void handlerPacket(JavaPlugin plugin) {
-        switch (this.version){
+        switch (this.version) {
             case v1_7_R4:
                 new TabPacket_v1_7(plugin);
                 break;

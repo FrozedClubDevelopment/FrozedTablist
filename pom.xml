@@ -4,9 +4,62 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>club.frozed.tab</groupId>
-    <artifactId>FrozedTab</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <groupId>club.frozed.tablist</groupId>
+    <artifactId>FrozedTablist</artifactId>
+    <version>2.0-SNAPSHOT</version>
+
+    <repositories>
+        <repository>
+            <id>via-ver</id>
+            <url>https://repo.viaversion.com/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- 1.8.8 -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/PaperSpigot-1.8.8-R0.1-SNAPSHOT.jar</systemPath>
+        </dependency>
+
+        <!-- 1.7.10 -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-1.7</artifactId>
+            <version>1.7.10-R0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/PaperSpigot-1.7.10-R0.1-SNAPSHOT.jar</systemPath>
+        </dependency>
+
+        <!-- Misc. Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Misc. ProtocolSupport API -->
+        <dependency>
+            <groupId>protocolsupport</groupId>
+            <artifactId>protocolsupport</artifactId>
+            <version>4.22.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/ProtocolSupport-1.8.jar</systemPath>
+        </dependency>
+
+        <!-- Misc. ViaVersion API -->
+        <dependency>
+            <groupId>us.myles</groupId>
+            <artifactId>viaversion</artifactId>
+            <version>2.1.2</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -32,59 +85,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>via-ver</id>
-            <url>https://repo.viaversion.com/</url>
-        </repository>
-    </repositories>
-
-    <dependencies>
-
-        <!-- 1.8.8 -->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/PaperSpigot-1.8.8-R0.1-SNAPSHOT.jar</systemPath>
-         </dependency>
-
-         <!-- 1.7.10 -->
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-1.7</artifactId>
-            <version>1.7.10-R0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/PaperSpigot-1.7.10-R0.1-SNAPSHOT.jar</systemPath>
-        </dependency>
-
-         <!-- Misc. Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- Misc. ProtocolSupport API -->
-        <dependency>
-            <groupId>protocolsupport</groupId>
-            <artifactId>protocolsupport</artifactId>
-            <version>4.22.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/ProtocolSupport-1.8.jar</systemPath>
-        </dependency>
-
-        <!-- Misc. ViaVersion API -->
-        <dependency>
-            <groupId>us.myles</groupId>
-            <artifactId>viaversion</artifactId>
-            <version>2.1.2</version>
-            <scope>provided</scope>
-        </dependency>
-
-    </dependencies>
-
 </project>

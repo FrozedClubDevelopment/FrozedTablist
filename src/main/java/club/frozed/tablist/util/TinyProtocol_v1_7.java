@@ -1,4 +1,4 @@
-package club.frozed.tab.util;
+package club.frozed.tablist.util;
 
 import java.util.Collections;
 import java.util.List;
@@ -21,18 +21,18 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.MapMaker;
-import com.mojang.authlib.GameProfile;
+import club.frozed.tablist.util.Reflection.MethodInvoker;
+import club.frozed.tablist.util.Reflection.FieldAccessor;
 
-import club.frozed.tab.util.Reflection.FieldAccessor;
-import club.frozed.tab.util.Reflection.MethodInvoker;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelDuplexHandler;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelPipeline;
-import io.netty.channel.ChannelPromise;
+import net.minecraft.util.com.mojang.authlib.GameProfile;
+import net.minecraft.util.io.netty.channel.Channel;
+import net.minecraft.util.io.netty.channel.ChannelDuplexHandler;
+import net.minecraft.util.io.netty.channel.ChannelFuture;
+import net.minecraft.util.io.netty.channel.ChannelHandlerContext;
+import net.minecraft.util.io.netty.channel.ChannelInboundHandlerAdapter;
+import net.minecraft.util.io.netty.channel.ChannelInitializer;
+import net.minecraft.util.io.netty.channel.ChannelPipeline;
+import net.minecraft.util.io.netty.channel.ChannelPromise;
 
 /**
  * Represents a very tiny alternative to ProtocolSuite.
@@ -41,7 +41,7 @@ import io.netty.channel.ChannelPromise;
  *
  * @author Kristian
  */
-public abstract class TinyProtocol_v1_8 {
+public abstract class TinyProtocol_v1_7 {
 
     private static final AtomicInteger ID = new AtomicInteger(0);
 
@@ -91,7 +91,7 @@ public abstract class TinyProtocol_v1_8 {
      *
      * @param plugin - the plugin.
      */
-    public TinyProtocol_v1_8(Plugin plugin) {
+    public TinyProtocol_v1_7(Plugin plugin) {
         this.plugin = plugin;
 
         // Compute handler name
@@ -256,9 +256,9 @@ public abstract class TinyProtocol_v1_8 {
      * <p>
      * Note that this is not executed on the main thread.
      *
-     * @param reciever - the receiving player, NULL for early login/status packets.
-     * @param channel - the channel that received the packet. Never NULL.
-     * @param packet - the packet being sent.
+     * @param reciever      - the receiving player, NULL for early login/status packets.
+     * @param channel       - the channel that received the packet. Never NULL.
+     * @param packet        - the packet being sent.
      * @return The packet to send instead, or NULL to cancel the transmission.
      */
     public Object onPacketOutAsync(Player reciever, Channel channel, Object packet) {
@@ -270,9 +270,9 @@ public abstract class TinyProtocol_v1_8 {
      * <p>
      * Use {@link Channel#remoteAddress()} to get the remote address of the client.
      *
-     * @param sender - the player that sent the packet, NULL for early login/status packets.
+     * @param sender  - the player that sent the packet, NULL for early login/status packets.
      * @param channel - channel that received the packet. Never NULL.
-     * @param packet - the packet being received.
+     * @param packet  - the packet being received.
      * @return The packet to recieve instead, or NULL to cancel.
      */
     public Object onPacketInAsync(Player sender, Channel channel, Object packet) {
@@ -292,10 +292,8 @@ public abstract class TinyProtocol_v1_8 {
 
     /**
      * Send a packet to a particular client.
-     * <p>
-     *
      * @param channel - client identified by a channel.
-     * @param packet - the packet to send.
+     * @param packet  - the packet to send.
      */
     public void sendPacket(Channel channel, Object packet) {
         channel.pipeline().writeAndFlush(packet);
@@ -304,7 +302,6 @@ public abstract class TinyProtocol_v1_8 {
     /**
      * Pretend that a given packet has been received from a player.
      * <p>
-     *
      * @param player - the player that sent the packet.
      * @param packet - the packet that will be received by the server.
      */
@@ -317,7 +314,7 @@ public abstract class TinyProtocol_v1_8 {
      * <p>
      *
      * @param channel - client identified by a channel.
-     * @param packet - the packet that will be received by the server.
+     * @param packet  - the packet that will be received by the server.
      */
     public void receivePacket(Channel channel, Object packet) {
         channel.pipeline().context("encoder").fireChannelRead(packet);
