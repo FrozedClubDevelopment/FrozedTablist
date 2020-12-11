@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: net.md-5:bungeecord-chat:1.14-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/md-5/bungeecord-chat/1.14-SNAPSHOT/bungeecord-chat-1.14-20191205.012913-22.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/net/md-5/bungeecord-chat/1.14-SNAPSHOT/bungeecord-chat-1.14-20191205.012913-22-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/md-5/bungeecord-chat/1.14-SNAPSHOT/bungeecord-chat-1.14-20191205.012913-22-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
