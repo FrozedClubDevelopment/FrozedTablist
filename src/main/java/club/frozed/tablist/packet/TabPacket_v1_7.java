@@ -1,7 +1,7 @@
-package club.frozed.tab.packet;
+package club.frozed.tablist.packet;
 
-import club.frozed.tab.util.Reflection;
-import club.frozed.tab.util.TinyProtocol_v1_7;
+import club.frozed.tablist.util.Reflection;
+import club.frozed.tablist.util.TinyProtocol_v1_7;
 import net.minecraft.server.v1_7_R4.PacketPlayOutScoreboardTeam;
 import net.minecraft.util.io.netty.channel.Channel;
 import org.bukkit.entity.Player;

@@ -1,4 +1,4 @@
-package club.frozed.tab.skin;
+package club.frozed.tablist.skin;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Lists;

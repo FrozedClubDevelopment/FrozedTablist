@@ -1,8 +1,8 @@
-package club.frozed.tab.listener;
+package club.frozed.tablist.listener;
 
-import club.frozed.tab.Tab;
-import club.frozed.tab.layout.TabLayout_v1_7;
-import club.frozed.tab.layout.TabLayout_v1_8;
+import club.frozed.tablist.Tab;
+import club.frozed.tablist.layout.TabLayout_v1_7;
+import club.frozed.tablist.layout.TabLayout_v1_8;
 import lombok.AllArgsConstructor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

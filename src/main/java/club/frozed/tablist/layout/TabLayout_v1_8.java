@@ -1,9 +1,9 @@
-package club.frozed.tab.layout;
+package club.frozed.tablist.layout;
 
-import club.frozed.tab.Tab;
-import club.frozed.tab.entry.TabEntry;
-import club.frozed.tab.skin.Skin;
-import club.frozed.tab.util.Reflection;
+import club.frozed.tablist.Tab;
+import club.frozed.tablist.entry.TabEntry;
+import club.frozed.tablist.skin.Skin;
+import club.frozed.tablist.util.Reflection;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -32,7 +32,7 @@ import us.myles.ViaVersion.api.ViaVersion;
 
 import java.util.*;
 
-import static club.frozed.tab.skin.Skin.TEXTURE_KEY;
+import static club.frozed.tablist.skin.Skin.TEXTURE_KEY;
 
 public class TabLayout_v1_8 {
 

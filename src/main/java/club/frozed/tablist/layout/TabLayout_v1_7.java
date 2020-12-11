@@ -1,4 +1,4 @@
-package club.frozed.tab.layout;
+package club.frozed.tablist.layout;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,10 +6,10 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
-import club.frozed.tab.Tab;
-import club.frozed.tab.entry.TabEntry;
-import club.frozed.tab.skin.Skin;
-import club.frozed.tab.util.Reflection;
+import club.frozed.tablist.Tab;
+import club.frozed.tablist.entry.TabEntry;
+import club.frozed.tablist.skin.Skin;
+import club.frozed.tablist.util.Reflection;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -33,7 +33,7 @@ import net.minecraft.server.v1_7_R4.WorldServer;
 import net.minecraft.util.com.mojang.authlib.GameProfile;
 import net.minecraft.util.com.mojang.authlib.properties.Property;
 
-import static club.frozed.tab.skin.Skin.TEXTURE_KEY;
+import static club.frozed.tablist.skin.Skin.TEXTURE_KEY;
 
 public class TabLayout_v1_7 {
 

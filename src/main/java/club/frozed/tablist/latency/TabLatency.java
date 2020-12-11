@@ -1,4 +1,4 @@
-package club.frozed.tab.latency;
+package club.frozed.tablist.latency;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

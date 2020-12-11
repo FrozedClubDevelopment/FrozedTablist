@@ -1,6 +1,6 @@
-package club.frozed.tab.entry;
+package club.frozed.tablist.entry;
 
-import club.frozed.tab.skin.Skin;
+import club.frozed.tablist.skin.Skin;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

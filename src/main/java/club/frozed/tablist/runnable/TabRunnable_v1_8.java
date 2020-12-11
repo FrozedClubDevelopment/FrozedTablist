@@ -1,10 +1,10 @@
-package club.frozed.tab.runnable;
+package club.frozed.tablist.runnable;
 
-import club.frozed.tab.adapter.TabAdapter;
-import club.frozed.tab.entry.TabEntry;
-import club.frozed.tab.latency.TabLatency;
-import club.frozed.tab.layout.TabLayout_v1_8;
-import club.frozed.tab.skin.Skin;
+import club.frozed.tablist.adapter.TabAdapter;
+import club.frozed.tablist.entry.TabEntry;
+import club.frozed.tablist.latency.TabLatency;
+import club.frozed.tablist.layout.TabLayout_v1_8;
+import club.frozed.tablist.skin.Skin;
 import lombok.AllArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

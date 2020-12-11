@@ -1,6 +1,6 @@
-package club.frozed.tab.adapter;
+package club.frozed.tablist.adapter;
 
-import club.frozed.tab.entry.TabEntry;
+import club.frozed.tablist.entry.TabEntry;
 import org.bukkit.entity.Player;
 
 import java.util.List;
