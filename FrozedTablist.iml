@@ -58,16 +58,18 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion:2.1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-common:2.1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.18" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-bukkit:2.1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-bungee:2.1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-sponge:2.1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-sponge-legacy:2.1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-velocity:2.1.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.14-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-common:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: it.unimi.dsi:fastutil:8.3.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-bukkit:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-bukkit-legacy:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-bungee:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-fabric:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-sponge:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-sponge-legacy:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: us.myles:viaversion-velocity:3.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.16-R0.4-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.guava:guava:20.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.guava:guava:21.0" level="project" />
   </component>
 </module>

@@ -28,7 +28,7 @@ import net.minecraft.server.v1_8_R3.PlayerInteractManager;
 import net.minecraft.server.v1_8_R3.WorldServer;
 import net.minecraft.server.v1_8_R3.WorldSettings;
 import protocolsupport.api.ProtocolSupportAPI;
-import us.myles.ViaVersion.api.ViaVersion;
+import us.myles.ViaVersion.ViaVersionPlugin;
 
 import java.util.*;
 
@@ -68,7 +68,7 @@ public class TabLayout_v1_8 {
         }
 
         if (Bukkit.getPluginManager().getPlugin("ViaVersion") != null) {
-            if (ViaVersion.getInstance().getPlayerVersion(player) >= 47) {
+            if (ViaVersionPlugin.getInstance().getApi().getPlayerVersion(player) >= 47) {
                 continueAt = true;
             }
         }
@@ -174,7 +174,7 @@ public class TabLayout_v1_8 {
         }
 
         if (Bukkit.getPluginManager().getPlugin("ViaVersion") != null) {
-            if (ViaVersion.getInstance().getPlayerVersion(player) >= 47) {
+            if (ViaVersionPlugin.getInstance().getApi().getPlayerVersion(player) >= 47) {
                 continueAt = true;
             }
         }
