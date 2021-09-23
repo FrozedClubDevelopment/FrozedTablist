@@ -4,31 +4,22 @@ import club.frozed.tablist.FrozedTablist;
 import club.frozed.tablist.entry.TabEntry;
 import club.frozed.tablist.skin.Skin;
 import club.frozed.tablist.util.Reflection;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.mojang.authlib.GameProfile;
+import com.mojang.authlib.properties.Property;
+import com.viaversion.viaversion.api.Via;
+import com.viaversion.viaversion.api.ViaAPI;
+import lombok.Getter;
+import net.minecraft.server.v1_8_R3.*;
+import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
+import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerInfo.EnumPlayerInfoAction;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
-
-import lombok.Getter;
-import net.minecraft.server.v1_8_R3.EntityPlayer;
-import net.minecraft.server.v1_8_R3.IChatBaseComponent;
-import net.minecraft.server.v1_8_R3.IChatBaseComponent.ChatSerializer;
-import net.minecraft.server.v1_8_R3.MinecraftServer;
-import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerInfo;
-import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerInfo.EnumPlayerInfoAction;
-import net.minecraft.server.v1_8_R3.PacketPlayOutPlayerListHeaderFooter;
-import net.minecraft.server.v1_8_R3.PacketPlayOutScoreboardTeam;
-import net.minecraft.server.v1_8_R3.PlayerInteractManager;
-import net.minecraft.server.v1_8_R3.WorldServer;
-import net.minecraft.server.v1_8_R3.WorldSettings;
 import protocolsupport.api.ProtocolSupportAPI;
-import us.myles.ViaVersion.ViaVersionPlugin;
 
 import java.util.*;
 
@@ -40,8 +31,8 @@ public class TabLayout_v1_8 {
     private final Map<Integer, GameProfile> profileMapping = Maps.newHashMap();
     private final Map<Integer, Skin> skinMapping = Maps.newHashMap();
 
-    @Getter
-    private static final Map<UUID, TabLayout_v1_8> layoutMapping = Maps.newHashMap();
+    @Getter private static final Map<UUID, TabLayout_v1_8> layoutMapping = Maps.newHashMap();
+    private final ViaAPI viaAPI = Via.getAPI();
 
     private final MinecraftServer minecraftServer = MinecraftServer.getServer();
     private final WorldServer worldServer = minecraftServer.getWorldServer(0);
@@ -68,7 +59,7 @@ public class TabLayout_v1_8 {
         }
 
         if (Bukkit.getPluginManager().getPlugin("ViaVersion") != null) {
-            if (ViaVersionPlugin.getInstance().getApi().getPlayerVersion(player) >= 47) {
+            if (viaAPI.getPlayerVersion(player.getUniqueId()) >= 47) {
                 continueAt = true;
             }
         }
@@ -174,7 +165,7 @@ public class TabLayout_v1_8 {
         }
 
         if (Bukkit.getPluginManager().getPlugin("ViaVersion") != null) {
-            if (ViaVersionPlugin.getInstance().getApi().getPlayerVersion(player) >= 47) {
+            if (viaAPI.getPlayerVersion(player.getUniqueId()) >= 47) {
                 continueAt = true;
             }
         }
