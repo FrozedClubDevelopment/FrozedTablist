@@ -10,8 +10,8 @@
 
     <repositories>
         <repository>
-            <id>via-version</id>
-            <url>https://repo.viaversion.com/</url>
+            <id>viaversion-repo</id>
+            <url>https://repo.viaversion.com</url>
         </repository>
     </repositories>
 
@@ -53,9 +53,9 @@
 
         <!-- Misc. ViaVersion API -->
         <dependency>
-            <groupId>us.myles</groupId>
-            <artifactId>viaversion</artifactId>
-            <version>3.2.1</version>
+            <groupId>com.viaversion</groupId>
+            <artifactId>viaversion-api</artifactId>
+            <version>LATEST</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
