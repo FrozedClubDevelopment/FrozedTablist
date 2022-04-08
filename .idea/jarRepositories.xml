@@ -7,6 +7,11 @@
       <option name="url" value="https://repo.viaversion.com/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="viaversion-repo" />
+      <option name="name" value="viaversion-repo" />
+      <option name="url" value="https://repo.viaversion.com" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />

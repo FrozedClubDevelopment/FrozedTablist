@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.viaversion:viaversion-api:4.1.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/viaversion/viaversion-api/4.1.2-SNAPSHOT/viaversion-api-4.1.2-20220103.100610-8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/viaversion/viaversion-api/4.1.2-SNAPSHOT/viaversion-api-4.1.2-20220103.100610-8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/viaversion/viaversion-api/4.1.2-SNAPSHOT/viaversion-api-4.1.2-20220103.100610-8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
