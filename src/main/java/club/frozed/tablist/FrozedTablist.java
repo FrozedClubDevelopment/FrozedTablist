@@ -1,13 +1,10 @@
 package club.frozed.tablist;
 
 import club.frozed.tablist.adapter.TabAdapter;
-import club.frozed.tablist.layout.TabLayout_v1_7;
-import club.frozed.tablist.layout.TabLayout_v1_8;
+import club.frozed.tablist.layout.TabLayout;
 import club.frozed.tablist.listener.TabListener;
-import club.frozed.tablist.packet.TabPacket_v1_7;
-import club.frozed.tablist.packet.TabPacket_v1_8;
-import club.frozed.tablist.runnable.TabRunnable_v1_7;
-import club.frozed.tablist.runnable.TabRunnable_v1_8;
+import club.frozed.tablist.packet.TabPacket;
+import club.frozed.tablist.runnable.TabRunnable;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -15,13 +12,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
 public class FrozedTablist {
-
-    /*
-    Forked from Hatsur API
-    Links:
-    -> https://github.com/norxir/seventab
-    -> https://github.com/norxir/eighttab
-     */
 
     @Getter private static FrozedTablist instance;
 
@@ -46,24 +36,14 @@ public class FrozedTablist {
         handlerPacket(plugin);
 
         Bukkit.getServer().getPluginManager().registerEvents(new TabListener(this), plugin);
-        switch (this.version) {
-            case v1_7_R4:
-                Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(plugin, new TabRunnable_v1_7(adapter), delay1, delay2); //TODO: async to run 1 millis
-                break;
-            case v1_8_R3:
-                Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(plugin, new TabRunnable_v1_8(adapter), delay1, delay2); //TODO: async to run 1 millis
-                break;
+        if (this.version == Version.v1_8_R3) {
+            Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(plugin, new TabRunnable(adapter), delay1, delay2); //TODO: async to run 1 millis
         }
     }
 
     private void handlerPacket(JavaPlugin plugin) {
-        switch (this.version) {
-            case v1_7_R4:
-                new TabPacket_v1_7(plugin);
-                break;
-            case v1_8_R3:
-                new TabPacket_v1_8(plugin);
-                break;
+        if (this.version == Version.v1_8_R3) {
+            new TabPacket(plugin);
         }
     }
 
@@ -75,30 +55,18 @@ public class FrozedTablist {
 
     public void removePlayer(Player player) {
         boolean continueAt = false;
-        switch (this.version) {
-            case v1_7_R4:
-                if (TabLayout_v1_7.getLayoutMapping().containsKey(player.getUniqueId())) {
-                    continueAt = true;
-                }
+        if (this.version == Version.v1_8_R3) {
+            if (TabLayout.getLayoutMapping().containsKey(player.getUniqueId())) {
+                continueAt = true;
+            }
 
-                if (continueAt) {
-                    TabLayout_v1_7.getLayoutMapping().remove(player.getUniqueId());
-                }
-                break;
-            case v1_8_R3:
-                if (TabLayout_v1_8.getLayoutMapping().containsKey(player.getUniqueId())) {
-                    continueAt = true;
-                }
-
-                if (continueAt) {
-                    TabLayout_v1_8.getLayoutMapping().remove(player.getUniqueId());
-                }
-                break;
+            if (continueAt) {
+                TabLayout.getLayoutMapping().remove(player.getUniqueId());
+            }
         }
     }
 
     public enum Version {
-        v1_7_R4,
         v1_8_R3
     }
 }

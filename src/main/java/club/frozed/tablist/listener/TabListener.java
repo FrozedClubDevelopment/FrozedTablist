@@ -1,8 +1,7 @@
 package club.frozed.tablist.listener;
 
 import club.frozed.tablist.FrozedTablist;
-import club.frozed.tablist.layout.TabLayout_v1_7;
-import club.frozed.tablist.layout.TabLayout_v1_8;
+import club.frozed.tablist.layout.TabLayout;
 import lombok.AllArgsConstructor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -14,62 +13,42 @@ import org.bukkit.event.player.PlayerQuitEvent;
 @AllArgsConstructor
 public class TabListener implements Listener {
 
-    private FrozedTablist instance;
+	private FrozedTablist instance;
 
-    @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
-        TabLayout_v1_7 tabLayout_v1_7;
-        TabLayout_v1_8 tabLayout_v1_8;
-        boolean validate = false;
+	@EventHandler
+	public void onJoin(PlayerJoinEvent event) {
+		Player player = event.getPlayer();
+		TabLayout tabLayout_;
+		boolean validate = false;
 
-        switch (FrozedTablist.getInstance().getVersion()) {
-            case v1_7_R4:
-                tabLayout_v1_7 = new TabLayout_v1_7(instance, player);
-                if (TabLayout_v1_7.getLayoutMapping().containsKey(player.getUniqueId())) {
-                    validate = true;
-                }
+		if (FrozedTablist.getInstance().getVersion() == FrozedTablist.Version.v1_8_R3) {
+			tabLayout_ = new TabLayout(instance, player);
+			if (TabLayout.getLayoutMapping().containsKey(player.getUniqueId())) {
+				validate = true;
+			}
 
-                if (TabLayout_v1_7.getLayoutMapping().get(player.getUniqueId()) != null) {
-                    validate = true;
-                }
+			if (TabLayout.getLayoutMapping().get(player.getUniqueId()) != null) {
+				validate = true;
+			}
 
-                if (!validate) {
-                    tabLayout_v1_7.create();
-                    tabLayout_v1_7.setHeaderAndFooter();
-                }
+			if (!validate) {
+				tabLayout_.create();
+				tabLayout_.setHeaderAndFooter();
+			}
 
-                TabLayout_v1_7.getLayoutMapping().put(player.getUniqueId(), tabLayout_v1_7);
-                break;
-            case v1_8_R3:
-                tabLayout_v1_8 = new TabLayout_v1_8(instance, player);
-                if (TabLayout_v1_8.getLayoutMapping().containsKey(player.getUniqueId())) {
-                    validate = true;
-                }
+			TabLayout.getLayoutMapping().put(player.getUniqueId(), tabLayout_);
+		}
+	}
 
-                if (TabLayout_v1_8.getLayoutMapping().get(player.getUniqueId()) != null) {
-                    validate = true;
-                }
+	@EventHandler
+	public void onQuit(PlayerQuitEvent event) {
+		Player player = event.getPlayer();
+		instance.removePlayer(player);
+	}
 
-                if (!validate) {
-                    tabLayout_v1_8.create();
-                    tabLayout_v1_8.setHeaderAndFooter();
-                }
-
-                TabLayout_v1_8.getLayoutMapping().put(player.getUniqueId(), tabLayout_v1_8);
-                break;
-        }
-    }
-
-    @EventHandler
-    public void onQuit(PlayerQuitEvent event) {
-        Player player = event.getPlayer();
-        instance.removePlayer(player);
-    }
-
-    @EventHandler
-    public void onKick(PlayerKickEvent event) {
-        Player player = event.getPlayer();
-        instance.removePlayer(player);
-    }
+	@EventHandler
+	public void onKick(PlayerKickEvent event) {
+		Player player = event.getPlayer();
+		instance.removePlayer(player);
+	}
 }

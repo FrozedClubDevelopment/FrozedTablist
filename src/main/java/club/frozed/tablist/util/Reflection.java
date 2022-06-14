@@ -14,7 +14,6 @@ import org.bukkit.Bukkit;
  * Project: Hatsur TabAPI
  * Date: 12/10/2020 @ 08:45
  */
-
 public final class Reflection {
     /**
      * An interface for invoking a specific constructor.
@@ -144,6 +143,7 @@ public final class Reflection {
                 return new FieldAccessor<T>() {
 
                     @Override
+                    @SuppressWarnings("unchecked")
                     public T get(Object target) {
                         try {
                             return (T) field.get(target);
@@ -296,7 +296,8 @@ public final class Reflection {
      * @return The class.
      */
     public static Class<Object> getUntypedClass(String lookupName) {
-        Class<Object> clazz = (Class<Object>) getClass(lookupName);
+        @SuppressWarnings({ "rawtypes", "unchecked" })
+        Class<Object> clazz = (Class) getClass(lookupName);
         return clazz;
     }
 
