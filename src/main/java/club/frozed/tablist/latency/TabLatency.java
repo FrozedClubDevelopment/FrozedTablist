@@ -1,14 +1,10 @@
 package club.frozed.tablist.latency;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * Created by Ryzeon
  * Project: Hatsur TabAPI
  * Date: 12/10/2020 @ 08:37
  */
-@AllArgsConstructor @Getter
 public enum TabLatency {
 
 	FIVE_BARS(149),
@@ -19,5 +15,13 @@ public enum TabLatency {
 	NO_BAR(-1);
 
 	private final int value;
+
+	TabLatency(int value) {
+		this.value = value;
+	}
+
+	public int getValue() {
+		return value;
+	}
 }
 

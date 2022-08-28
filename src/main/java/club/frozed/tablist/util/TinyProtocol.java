@@ -403,14 +403,7 @@ public class TinyProtocol {
 		}
 
 		// See ChannelInjector in ProtocolLib, line 590
-		channel.eventLoop().execute(new Runnable() {
-
-			@Override
-			public void run() {
-				channel.pipeline().remove(handlerName);
-			}
-
-		});
+		channel.eventLoop().execute(() -> channel.pipeline().remove(handlerName));
 	}
 
 	/**
